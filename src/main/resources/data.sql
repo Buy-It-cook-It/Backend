@@ -14,6 +14,6 @@ CREATE TABLE recipe(
     id IDENTITY not null,
     recipeName varchar not null,
     description varchar not null,
-    primary key (id)
+    primary key (id),
     FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE CASCADE
 );
