@@ -19,7 +19,7 @@ public class ProductService {
         return productDAO.findAll();
     }
 
-    public Product getById(Long id) {
+    public Product getById(int id) {
         return productDAO.getReferenceById(Math.toIntExact(id));
     }
 
@@ -27,7 +27,7 @@ public class ProductService {
         return productDAO.save(product);
     }
 
-    public void delete(Long id) {
+    public void delete(int id) {
         productDAO.delete(getById(id));
     }
 }

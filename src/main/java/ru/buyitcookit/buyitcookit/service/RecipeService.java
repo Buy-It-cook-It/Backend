@@ -19,7 +19,7 @@ public class RecipeService {
         return recipeDAO.findAll();
     }
 
-    public Recipe getById(Long id){
+    public Recipe getById(int id){
         return recipeDAO.getReferenceById(Math.toIntExact(id));
     }
 
@@ -27,7 +27,7 @@ public class RecipeService {
         return recipeDAO.save(recipe);
     }
 
-    public void delete(Long id){
+    public void delete(int id){
         recipeDAO.delete(getById(id));
     }
 }
