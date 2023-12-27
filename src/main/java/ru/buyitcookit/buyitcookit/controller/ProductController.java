@@ -1,5 +1,6 @@
 package ru.buyitcookit.buyitcookit.controller;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +11,9 @@ import ru.buyitcookit.buyitcookit.service.ProductService;
 import java.net.URI;
 import java.util.List;
 
+
 @RestController
-@RequestMapping(name = "/product")
+@RequestMapping(value = "/product", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ProductController {
 
     private final ProductService productService;
@@ -21,7 +23,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product get(@PathVariable int id) {
+    public Product get(@PathVariable Integer id) {
         return productService.getById(id);
     }
 

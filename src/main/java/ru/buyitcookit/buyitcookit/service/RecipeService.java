@@ -20,7 +20,7 @@ public class RecipeService {
     }
 
     public Recipe getById(int id){
-        return recipeDAO.getReferenceById(Math.toIntExact(id));
+        return getAll().stream().filter(o->o.getId()==id).findFirst().get();
     }
 
     public Recipe save(Recipe recipe){

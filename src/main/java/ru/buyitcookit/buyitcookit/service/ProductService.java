@@ -20,7 +20,7 @@ public class ProductService {
     }
 
     public Product getById(int id) {
-        return productDAO.getReferenceById(Math.toIntExact(id));
+        return getAll().stream().filter(o->o.getId() == id).findFirst().get();
     }
 
     public Product save(Product product) {

@@ -11,7 +11,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(name = "/recipe")
+@RequestMapping(value = "recipe", produces = MediaType.APPLICATION_JSON_VALUE)
 public class RecipeController {
 
     private final RecipeService recipeService;
@@ -21,7 +21,7 @@ public class RecipeController {
     }
 
     @GetMapping("/{id}")
-    public Recipe get(@PathVariable int id) {
+    public Recipe get(@PathVariable Integer id) {
         return recipeService.getById(id);
     }
 

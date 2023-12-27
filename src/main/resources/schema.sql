@@ -1,6 +1,6 @@
 CREATE TABLE products (
     id IDENTITY not null,
-    productName varchar(255) not null,
+    name varchar(255) not null,
     description varchar  not null,
     weight integer not null,
     price integer not null,
@@ -9,10 +9,10 @@ CREATE TABLE products (
 );
 
 CREATE TABLE recipe (
-    product_id integer not null,
+--    product_id integer not null,
     id IDENTITY not null,
-    recipeName varchar not null,
+    name varchar not null,
     description varchar not null,
-    primary key (id),
-    FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE CASCADE
+    primary key (id)
+--    FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE CASCADE
 );
